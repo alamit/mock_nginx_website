@@ -15,5 +15,5 @@
 BASEDIR="$( cd "$(dirname "$0")" ; pwd -P )"
 NAME=`basename $BASEDIR`
 
-sed "s/\#\#INSTALL_PATH\#\#/\$BASEDIR/g" $BASEDIR/nginx/conf.template > $BASEDIR/nginx/$NAME
-sed -i "s/\#\#NAME\#\#/\$NAME/g" $BASEDIR/nginx/$NAME
+sed "s|##INSTALL_PATH##|$BASEDIR|g" $BASEDIR/nginx/conf.template > $BASEDIR/nginx/$NAME
+sed -i "s/##NAME##/$NAME/g" $BASEDIR/nginx/$NAME
