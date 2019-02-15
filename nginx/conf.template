@@ -3,7 +3,9 @@ server {
 	root ##INSTALL_PATH##/www/html;
 	index index.html index.htm index.php;
 	server_name _;
+	access_log /var/log/nginx/access.log
 	access_log ##INSTALL_PATH##/log/##NAME##.access.http.log;
+	error_log /var/log/nginx/error.log
 	error_log ##INSTALL_PATH##/log/##NAME##.error.http.log;
 }
 
@@ -12,7 +14,9 @@ server {
 	root ##INSTALL_PATH##/www/html;
 	index index.html index.htm index.php
 	server_name _;
+	access_log /var/log/nginx/access.log
 	access_log ##INSTALL_PATH##/log/##NAME##.access.https.log;
+	error_log /var/log/nginx/error.log
 	error_log ##INSTALL_PATH##/log/##NAME##.error.https.log;
 	ssl on;
 	ssl_certificate /etc/nginx/ssl/server.crt;
